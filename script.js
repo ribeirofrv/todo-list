@@ -1,16 +1,21 @@
 const criarTarefa = document.querySelector('#criar-tarefa');
 const listaTarefa = document.querySelector('#lista-tarefas');
 const textoTarefa = document.querySelector('#texto-tarefa');
-// const tarefa = textoTarefa.innerText().value();
+const itemDaLista = document.querySelectorAll('.tarefa');
 
 criarTarefa.addEventListener('click', () => {
-  const itemDaLista = document.createElement('li');
+  const adicionaTarefa = document.createElement('li');
 
   if (textoTarefa.value === '') {
     alert('Campo vazio, adicione uma tarefa!');
   } else {
-    itemDaLista.innerText = textoTarefa.value;
-    listaTarefa.appendChild(itemDaLista);
+    adicionaTarefa.innerText = textoTarefa.value;
+    listaTarefa.appendChild(adicionaTarefa);
+    adicionaTarefa.classList.add('tarefa');
     textoTarefa.value = '';
   }
+});
+
+listaTarefa.addEventListener('click', (event) => {
+  event.target.style.background = 'gray';
 });
