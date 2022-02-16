@@ -24,3 +24,7 @@ listaTarefa.addEventListener('click', (event) => {
 
   event.target.style.background = 'gray';
 });
+
+listaTarefa.addEventListener('dblclick', (event) => {
+  event.target.classList.toggle('completed');
+});
